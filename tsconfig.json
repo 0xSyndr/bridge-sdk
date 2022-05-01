@@ -11,5 +11,10 @@
     "target": "es2018",
     "module": "ESNext",
     "importHelpers": true,
-  }
+  },
+  "exclude": [
+    "lib",
+    "node_modules",
+    "src/**/*.spec.ts"
+  ]
 }
