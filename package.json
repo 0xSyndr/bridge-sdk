@@ -4,7 +4,7 @@
     "tsdx": "^0.14.1"
   },
   "name": "@test01010101/sdk-ts",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "module": "dist/index.js",
