@@ -1,6 +1,8 @@
 import { Contract } from '@ethersproject/contracts';
 import { Web3Provider, JsonRpcProvider } from '@ethersproject/providers';
 import { ethers } from 'ethers';
+export * from './address';
+export * from './estimateBridgeFees';
 export declare function isAddress(value: any): string | false;
 export declare function shortenAddress(address: string, chars?: number): string;
 export declare function getContract(address: string, ABI: any, library: Web3Provider | JsonRpcProvider, account?: string): Contract;

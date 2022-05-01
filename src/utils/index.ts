@@ -7,6 +7,8 @@ import {
   JsonRpcProvider,
 } from '@ethersproject/providers';
 import { ethers } from 'ethers';
+export * from './address';
+export * from './estimateBridgeFees';
 
 // returns the checksummed address if the address is valid, otherwise returns false
 export function isAddress(value: any): string | false {
