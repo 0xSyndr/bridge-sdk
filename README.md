@@ -3,7 +3,7 @@
 Parakeet Bridge provides a key missing piece of infrastructure by helping users bridge their NFTs between multiple blockchains. <br />
 With Parakeet bridge you can transfer your ERC721/ERC1155 tokens across multiple public blockchain networks in a secure, trustless & decentralized manner. <br />
 You can read more about Parakeet DAO in [Official docs](https://docs.parakeetdao.com/overview/what-is-parakeet-dao) <br />
-[NPM package](https://www.npmjs.com/package/@parakeet/sdk)
+[NPM package](https://www.npmjs.com/package/parakeet-bridge-sdk)
 
 ## Supported chains (Testnet)
 
@@ -32,7 +32,7 @@ You can read more about Parakeet DAO in [Official docs](https://docs.parakeetdao
 ## How to install
 
 ```js
-npm i @parakeet/sdk
+npm i parakeet-bridge-sdk
 ```
 
 ## How to approve the bridge
@@ -40,7 +40,7 @@ npm i @parakeet/sdk
 1. Import approve function <br />
 
    ```js
-   import { approve } from '@parakeet/sdk/bridge';
+   import { approve } from 'parakeet-bridge-sdk/src/';
    ```
 
 2. Use inside your project. All arguments are required <br />
@@ -69,7 +69,7 @@ npm i @parakeet/sdk
 1. Import bridge function <br />
 
    ```js
-   import { bridge } from '@parakeet/sdk/bridge';
+   import { bridge } from 'parakeet-bridge-sdk/src/';
    ```
 
 2. Use inside your project. All arguments are required <br />
@@ -100,7 +100,7 @@ npm i @parakeet/sdk
 1. Import estimateBridgeFees function <br />
 
    ```js
-   import { estimateBridgeFees } from '@parakeet/sdk/bridge';
+   import { estimateBridgeFees } from 'parakeet-bridge-sdk/src/';
    ```
 
 2. Use inside your project. All arguments are required <br />
@@ -131,7 +131,7 @@ npm i @parakeet/sdk
 ### ReactJs Example using web3-react
 
 ```js
-import { approve, bridge } from '@parakeet/sdk/bridge';
+import { approve, bridge } from 'parakeet-bridge-sdk/src/';
 import { useWeb3React } from '@web3-react/core';
 
 const useBridge = () => {
@@ -155,6 +155,23 @@ const useBridge = () => {
   provider = library.provider;
   // in case of web3.js
   provider = library.currentProvider;
+  
+  const estimateFee = async () => {
+   
+    try {
+      const estimatedFees = await estimateBridgeFees({
+        account,
+        dstChainId,
+        srcChainId,
+        provider,
+        tokenId,
+        nftSrcContractAddress
+      });
+      console.log(estimateFee)
+    } catch (err) {
+      console.error(err);
+    }
+};
 
   const bridgeNFT = async () => {
     try {
