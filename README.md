@@ -105,7 +105,7 @@ npm i @parakeet/sdk
 
 2. Use inside your project. All arguments are required <br />
    ```js
-const estimatedFees = await estimateBridgeFees({
+   const estimatedFees = await estimateBridgeFees({
           account,
           dstChainId,
           srcChainId,
@@ -115,7 +115,7 @@ const estimatedFees = await estimateBridgeFees({
         });
    ```
 
-### Arguments for bridge
+### Arguments for estimateBridgeFees
 
 | Argument             |  Type   | Required | Description                                                                 |
 | -------------------- | :-----: | -------: | --------------------------------------------------------------------------- |
