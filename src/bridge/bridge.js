@@ -17,13 +17,6 @@ export const bridge = async ({
   tokenId,
   provider,
   account,
-}: {
-  srcChainId: ChainId;
-  dstChainId: ChainId;
-  nftCollectionAddress: string;
-  tokenId: number;
-  provider: any;
-  account: string;
 }) => {
   const _provider = new Web3Provider(provider);
   const dstLayerZeroChainId = LAYERZERO_CHAINIDS[dstChainId];

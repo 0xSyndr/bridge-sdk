@@ -2,8 +2,8 @@
   "dependencies": {
     "ethers": "^5.6.4"
   },
-  "name": "@test01010101/sdk-ts",
-  "version": "1.0.14",
+  "name": "testwithoutts",
+  "version": "1.2.2",
   "main": "index.js",
   "types": "index.d.ts",
   "module": "index.js",
@@ -18,8 +18,8 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "description": ""
 }

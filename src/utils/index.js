@@ -11,7 +11,7 @@ export * from './address';
 export * from './estimateBridgeFees';
 
 // returns the checksummed address if the address is valid, otherwise returns false
-export function isAddress(value: any): string | false {
+export function isAddress(value) {
   try {
     return getAddress(value);
   } catch {
@@ -20,7 +20,7 @@ export function isAddress(value: any): string | false {
 }
 
 // shorten the checksummed version of the input address to have 0x + 4 characters at start and end
-export function shortenAddress(address: string, chars = 4): string {
+export function shortenAddress(address, chars = 4) {
   const parsed = isAddress(address);
   if (!parsed) {
     throw Error(`Invalid 'address' parameter '${address}'.`);
@@ -30,27 +30,27 @@ export function shortenAddress(address: string, chars = 4): string {
 
 // account is not optional
 function getSigner(
-  library: Web3Provider | JsonRpcProvider,
-  account: string
-): JsonRpcSigner {
+  library,
+  account
+) {
   return library.getSigner(account).connectUnchecked();
 }
 
 // account is optional
 function getProviderOrSigner(
-  library: Web3Provider | JsonRpcProvider,
-  account?: string
-): Web3Provider | JsonRpcSigner | JsonRpcProvider {
+  library,
+  account
+) {
   return account ? getSigner(library, account) : library;
 }
 
 // account is optional
 export function getContract(
-  address: string,
-  ABI: any,
-  library: Web3Provider | JsonRpcProvider,
-  account?: string
-): Contract {
+  address,
+  ABI,
+  library,
+  account
+) {
   if (!isAddress(address) || address === AddressZero) {
     throw Error(`Invalid 'address' parameter '${address}'.`);
   }
@@ -58,18 +58,18 @@ export function getContract(
   return new Contract(
     address,
     ABI,
-    getProviderOrSigner(library, account) as any
+    getProviderOrSigner(library, account)
   );
 }
 
-export const toBN = (value: string) => {
+export const toBN = (value) => {
   return ethers.BigNumber.from(value);
 };
 
-export const formatEther = (value: ethers.BigNumber) => {
+export const formatEther = (value) => {
   return ethers.utils.formatEther(value);
 };
 
-export const parseEther = (value: string) => {
+export const parseEther = (value) => {
   return ethers.utils.parseEther(value);
 };

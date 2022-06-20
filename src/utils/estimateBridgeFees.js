@@ -20,13 +20,6 @@ export const estimateBridgeFees = async ({
   tokenId,
   provider,
   account,
-}: {
-  srcChainId: ChainId;
-  dstChainId: ChainId;
-  nftSrcContractAddress: string;
-  tokenId: number;
-  provider: any;
-  account: string;
 }) => {
   const lzDstChainId = LAYERZERO_CHAINIDS[dstChainId];
   const bridgeAddr = PARAKEET_BRIDGE_ADDRESS[srcChainId];
@@ -72,7 +65,7 @@ export const estimateBridgeFees = async ({
 };
 
 const generateBridgeFees = async () => {
-  const bridgeFees: any = {};
+  const bridgeFees = {};
 
   for (const [srcId, srcName] of CHAIN_MAPPABLE) {
     console.log(

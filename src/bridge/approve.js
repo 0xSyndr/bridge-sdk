@@ -10,12 +10,6 @@ export const approve = async ({
   tokenId,
   provider,
   account,
-}: {
-  srcChainId: ChainId;
-  nftCollectionAddress: string;
-  tokenId: number;
-  provider: any;
-  account: string;
 }) => {
   const _provider = new Web3Provider(provider);
 

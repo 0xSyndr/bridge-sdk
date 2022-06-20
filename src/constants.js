@@ -1,18 +1,18 @@
-export enum ChainId {
-  RINKEBY = 4,
-  BSC_TESTNET = 97,
-  FUJI = 43113,
-  MUMBAI = 80001,
-  ARBITRUM_RINKEBY = 421611,
-  OPTIMISM_KOVAN = 69,
-  FANTOM_TESTNET = 4002,
+export const ChainId = {
+  RINKEBY: 4,
+  BSC_TESTNET: 97,
+  FUJI: 43113,
+  MUMBAI: 80001,
+  ARBITRUM_RINKEBY: 421611,
+  OPTIMISM_KOVAN: 69,
+  FANTOM_TESTNET: 4002,
 }
 
-export type ChainProp<T> = { [chainId in ChainId]: T };
+// export type ChainProp<T> = { [chainId in ChainId]: T };
 
-export type ChainPropMappable<T> = Map<ChainId, T>;
+// export type ChainPropMappable<T> = Map<ChainId, T>;
 
-export const CHAIN_MAPPABLE: ChainPropMappable<string> = new Map([
+export const CHAIN_MAPPABLE = [
   [ChainId.RINKEBY, 'Rinkeby'],
   [ChainId.BSC_TESTNET, 'BSC Testnet'],
   [ChainId.FUJI, 'Fuji'],
@@ -20,9 +20,9 @@ export const CHAIN_MAPPABLE: ChainPropMappable<string> = new Map([
   [ChainId.ARBITRUM_RINKEBY, 'Arbitrum Rinkeby'],
   [ChainId.OPTIMISM_KOVAN, 'Optimism Kovan'],
   [ChainId.FANTOM_TESTNET, 'Fantom Testnet'],
-]);
+];
 
-export const LAYERZERO_CHAINIDS: ChainProp<number> = {
+export const LAYERZERO_CHAINIDS = {
   [ChainId.RINKEBY]: 10001,
   [ChainId.BSC_TESTNET]: 10002,
   [ChainId.FUJI]: 10006,
@@ -32,7 +32,7 @@ export const LAYERZERO_CHAINIDS: ChainProp<number> = {
   [ChainId.FANTOM_TESTNET]: 10012,
 };
 
-export const LAYERZERO_ENDPOINTS: ChainProp<string> = {
+export const LAYERZERO_ENDPOINTS = {
   [ChainId.RINKEBY]: '0x79a63d6d8BBD5c6dfc774dA79bCcD948EAcb53FA',
   [ChainId.BSC_TESTNET]: '0x6Fcb97553D41516Cb228ac03FdC8B9a0a9df04A1',
   [ChainId.FUJI]: '0x93f54D755A063cE7bB9e6Ac47Eccc8e33411d706',
@@ -42,7 +42,7 @@ export const LAYERZERO_ENDPOINTS: ChainProp<string> = {
   [ChainId.FANTOM_TESTNET]: '0x7dcAD72640F835B0FA36EFD3D6d3ec902C7E5acf',
 };
 
-export const BRIDGE_FEES: ChainProp<ChainProp<string>> = {
+export const BRIDGE_FEES = {
   [ChainId.RINKEBY]: {
     [ChainId.RINKEBY]: '0.01',
     [ChainId.BSC_TESTNET]: '0.01',
@@ -108,17 +108,17 @@ export const BRIDGE_FEES: ChainProp<ChainProp<string>> = {
   },
 };
 
-export const PARAKEET_BRIDGE_ADDRESS: ChainProp<string> = {
-  [ChainId.RINKEBY]: '0x6A0707CaEc8de7BC07a4995E881247eeB46A6c90',
-  [ChainId.BSC_TESTNET]: '0xE405752D697F41d65229645aaeA6D6dF0f2e91F1',
-  [ChainId.FUJI]: '0x7d98E060cB32b012655b16f219F9235f931708FA',
-  [ChainId.MUMBAI]: '0x6afb1825F9C6313B61C73051591e851EFe30d0aF',
-  [ChainId.ARBITRUM_RINKEBY]: '0x6C36B02312c28EA27EC19e2DaF13ef549D34c416',
-  [ChainId.OPTIMISM_KOVAN]: '0x1cc30051867Bd38E0e8D1164585f1EE9dd1fB198',
-  [ChainId.FANTOM_TESTNET]: '0x1cc30051867Bd38E0e8D1164585f1EE9dd1fB198',
+export const PARAKEET_BRIDGE_ADDRESS = {
+  [ChainId.RINKEBY]: '0xF6317bAa750cd25aCBa42EB4dd8A60B26339C866',
+  [ChainId.BSC_TESTNET]: '0xCE79208126dA1552BB4dC2a3938D1a1825e175e1',
+  [ChainId.FUJI]: '0x16F19Fb78085222723790904f576E27EC442f839',
+  [ChainId.MUMBAI]: '0xFF6B9f58F86a960feDC21b58364eB2B6ef8AEBec',
+  [ChainId.ARBITRUM_RINKEBY]: '0x77B730ba8828009d05104d6aF20e9564aed61503',
+  [ChainId.OPTIMISM_KOVAN]: '0x42458fDC5c1Cf8Ffe5452d4a7142963b00f04A83',
+  [ChainId.FANTOM_TESTNET]: '0x98C550F0FA2C5FA2a4Ae24a48Fa29F3204F8698B',
 };
 
-export const PROVIDERS: ChainProp<string> = {
+export const PROVIDERS = {
   [ChainId.RINKEBY]:
     'https://eth-rinkeby.alchemyapi.io/v2/8fu8zXHta9pwaaDpEj9IsyldC-Ds8-sg',
   [ChainId.BSC_TESTNET]:

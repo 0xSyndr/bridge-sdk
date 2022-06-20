@@ -5,10 +5,6 @@ export const getDstChainAddress = ({
   srcChainId,
   dstChainId,
   nftSrcContractAddress,
-}: {
-  srcChainId: ChainId;
-  dstChainId: ChainId;
-  nftSrcContractAddress: string;
 }) => {
   for (let nft of Object.keys(WHITELISTED_COLLECTIONS)) {
     if (
