@@ -95,6 +95,37 @@ npm i @parakeet/sdk
 | provider             | Object  |     true | Web3Provider                                                                |
 | account              | String  |     true | account address                                                             |
 
+## How to estimate bridge fee
+
+1. Import estimateBridgeFees function <br />
+
+   ```js
+   import { estimateBridgeFees } from '@parakeet/sdk/bridge';
+   ```
+
+2. Use inside your project. All arguments are required <br />
+   ```js
+const estimatedFees = await estimateBridgeFees({
+          account,
+          dstChainId,
+          srcChainId,
+          provider,
+          tokenId,
+          nftSrcContractAddress
+        });
+   ```
+
+### Arguments for bridge
+
+| Argument             |  Type   | Required | Description                                                                 |
+| -------------------- | :-----: | -------: | --------------------------------------------------------------------------- |
+| srcChainId           | Integer |     true | chain Id on the source chain -> chain where the NFT is currently present    |
+| dstChainId           | Integer |     true | chain Id of the destination chain -> chain where you want to bridge the NFT |
+| nftSrcContractAddress | String  |     true | contract address of collection on the source chain                          |
+| tokenId              | String  |     true | specific token Id that you want to bridge                                   |
+| provider             | Object  |     true | Web3Provider                                                                |
+| account              | String  |     true | account address                                                             |
+
 ## Example
 
 ### ReactJs Example using web3-react
